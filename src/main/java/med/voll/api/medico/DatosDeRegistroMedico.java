@@ -1,4 +1,12 @@
-package med.voll.api;
+package med.voll.api.medico;
 
-public record DatosDeRegistroMedico(String nombre, String email, String dni, Especialidad especialidad) {
+import med.voll.api.direccion.DatosDeDireccion;
+
+public record DatosDeRegistroMedico(
+        String nombre,
+        String email,
+        String dni,
+        Especialidad especialidad,
+        DatosDeDireccion direccion
+) {
 }
