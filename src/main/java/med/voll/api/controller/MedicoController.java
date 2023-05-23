@@ -22,6 +22,7 @@ public class MedicoController {
     @Autowired
     private MedicoRepository medicoRepository;
 
+    // Guardar
     @PostMapping
     public void registrarMedico(@RequestBody @Valid DatosDeRegistroMedico registro) {
         System.out.println("El request llega correctamente!");
@@ -35,16 +36,27 @@ public class MedicoController {
         return medicoRepository.findAll().stream().map(DatosListadoMedico::new).toList();
     }*/
 
-    // Estrategia de paginación
+    // Estrategia de PAGINACIÓN
     @GetMapping
-    public Page<DatosListadoMedico> listadoMedicos(@PageableDefault(size = 2) Pageable paginacion) {
-        return medicoRepository.findAll(paginacion).map(DatosListadoMedico::new);
+    public Page<DatosListadoMedico> listadoMedicos(@PageableDefault(size = 5) Pageable paginacion) {
+        //return medicoRepository.findAll(paginacion).map(DatosListadoMedico::new);
+        return medicoRepository.findByActivoTrue(paginacion).map(DatosListadoMedico::new);
     }
 
+    // Actualizar
     @PutMapping
     @Transactional
     public void actualizarMedico(@RequestBody @Valid DatosActualizarMedico datosActualizar) {
         Medico medico = medicoRepository.getReferenceById(datosActualizar.id());
         medico.actualizarDatos(datosActualizar);
+    }
+
+    // Borrar
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void eliminarMedico(@PathVariable Long id) {
+        Medico medico = medicoRepository.getReferenceById(id);
+        medico.desactivarMedico();  // Delete Lógico (No en DB)
+        //medicoRepository.delete(medico);
     }
 }
