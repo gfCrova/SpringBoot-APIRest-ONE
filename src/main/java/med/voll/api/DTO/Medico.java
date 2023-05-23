@@ -1,10 +1,13 @@
-package med.voll.api.medico;
+package med.voll.api.DTO;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import med.voll.api.DTO.medico.DatosActualizarMedico;
+import med.voll.api.DTO.medico.DatosDeRegistroMedico;
+import med.voll.api.DTO.medico.Especialidad;
 
 @Entity(name = "Medico")
 @Table(name = "medicos")
@@ -34,5 +37,17 @@ public class Medico {
         this.telefono = registro.telefono();
         this.especialidad = registro.especialidad();
         this.direccion = new Direccion(registro.direccion());
+    }
+
+    public void actualizarDatos(DatosActualizarMedico datosActualizar) {
+        if(datosActualizar.nombre() != null) {
+            this.nombre = datosActualizar.nombre();
+        }
+        if (datosActualizar.dni() != null) {
+            this.dni = datosActualizar.dni();
+        }
+        if (datosActualizar.direccion() != null) {
+            this.direccion = direccion.actualizarDatos(datosActualizar.direccion());
+        }
     }
 }
