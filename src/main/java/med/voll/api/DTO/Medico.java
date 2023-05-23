@@ -24,6 +24,7 @@ public class Medico {
     private String email;
     private String dni;
     private String telefono;
+    private Boolean activo;
     @Enumerated(EnumType.STRING)
     private Especialidad especialidad;
     @Embedded
@@ -34,6 +35,7 @@ public class Medico {
         this.nombre = registro.nombre();
         this.email = registro.email();
         this.dni = registro.dni();
+        this.activo = true;
         this.telefono = registro.telefono();
         this.especialidad = registro.especialidad();
         this.direccion = new Direccion(registro.direccion());
@@ -49,5 +51,9 @@ public class Medico {
         if (datosActualizar.direccion() != null) {
             this.direccion = direccion.actualizarDatos(datosActualizar.direccion());
         }
+    }
+
+    public void desactivarMedico() {
+        this.activo = false;
     }
 }
