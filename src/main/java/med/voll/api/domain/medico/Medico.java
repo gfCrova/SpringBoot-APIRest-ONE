@@ -1,10 +1,11 @@
-package med.voll.api.DTO;
+package med.voll.api.DTO.medico;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import med.voll.api.DTO.direccion.Direccion;
 import med.voll.api.DTO.medico.DatosActualizarMedico;
 import med.voll.api.DTO.medico.DatosDeRegistroMedico;
 import med.voll.api.DTO.medico.Especialidad;

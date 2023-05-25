@@ -1,10 +1,9 @@
-package med.voll.api.DTO;
+package med.voll.api.DTO.direccion;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import med.voll.api.DTO.direccion.DatosDeDireccion;
 
 @Embeddable
 @Getter
