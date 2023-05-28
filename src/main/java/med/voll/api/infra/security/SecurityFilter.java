@@ -4,7 +4,11 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.validation.constraints.NotNull;
+import med.voll.api.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
@@ -16,21 +20,27 @@ public class SecurityFilter extends OncePerRequestFilter {
     @Autowired
     private TokenService tokenService;
 
+    @Autowired
+    private UsuarioRepository usuarioRepository;
+
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         System.out.println("El filtro esta siendo llamado");
-        var token = request.getHeader("Authorization");
+        var authHeader = request.getHeader("Authorization");
 
-        if (token == "" || token == null) {
-            throw new RuntimeException("El token enviado no es válido");
+        if (authHeader != null) {
+            var token = authHeader.replace("Bearer ", "");
+            System.out.println(token);
+            var nombreUsuario = tokenService.getSubject(token);
+            if (nombreUsuario != null) {
+                // Token Válido
+                var usuario = usuarioRepository.findByLogin(nombreUsuario);
+                System.out.println(usuario);
+                // Forzamos Inicio de sesión
+                var authentication = new UsernamePasswordAuthenticationToken(usuario, null, usuario.getAuthorities());
+                SecurityContextHolder.getContext().setAuthentication(authentication);
+            }
         }
-        token = token.replace("Bearer", "");
-
-        System.out.println(token);
-        System.out.println(tokenService.getSubject(token));
-
-
-
         filterChain.doFilter(request, response);
     }
 }
