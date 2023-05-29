@@ -6,18 +6,16 @@ API Rest en Java, desarrollando operaciones CRUD utilizando la base de datos MyS
 
 <br><br>
 
-> ## Creación del proyecto 
-
-<br>
+> ## Creación del proyecto
 
 - Crear un proyecto Spring Boot usando el sitio web <b>Spring Initializr</b>;
 - Importar el proyecto a IntelliJ y ejecutar una aplicación Spring Boot a través de la clase que contiene el método ```main```;
 - Crear una clase Controller y mapear una <b>URL</b> en él usando las anotaciones ```@RestController``` y ```@RequestMapping```;
 - Realizar una solicitud de prueba en el navegador accediendo a la <b>URL</b>mapeada en el Controller.
 
-> ## Request POST
-
 <br>
+
+> ## Request POST
 
 - Mapear solicitudes <b>POST</b> en una clase Controller;
 - Enviar solicitudes <b>POST</b> a la <b>API</b> usando Insomnia;
@@ -25,27 +23,27 @@ API Rest en Java, desarrollando operaciones CRUD utilizando la base de datos MyS
 - Utilizar la anotación ```@RequestBody``` para recibir datos del cuerpo de la solicitud en un parámetro en el Controller;
 - Use el padrón <b>DTO (Data Transfer Object)</b>, a través de Java Records, para representar los datos recibidos en una solicitud <b>POST</b>.
 
-> ## Spring Data JPA
-
 <br>
+
+> ## Spring Data JPA
 
 - Agregar nuevas dependencias en el proyecto;
 - Asignar una entidad <b>JPA</b> y crear una interfaz de Repositorio para ella;
 - Utilizar <b>Flyway</b> como herramienta de migración de proyectos;
 - Realice validaciones con <b>Bean Validation</b> usando algunas de sus anotaciones, como ```@NotBlank```.
 
-> ## Request GET
-
 <br>
+
+> ## Request GET
 
 - Usar la anotación ```@GetMapping``` para mapear métodos en los Controllers que producen datos;
 - Usar la interfaz ```Pageable``` de Spring para realizar consultas con paginación;
 - Controlar la paginación y el ordenamiento de los datos devueltos por la <b>API</b> con los parámetros ```page```, ```size``` y ```sort```;
 - Configurar el proyecto para que los comandos <b>SQL</b> se visualicen en la consola.
 
-> ## Request PUT y DELETE
-
 <br>
+
+> ## Request PUT y DELETE
 
 - Mapear solicitudes <b>PUT</b> con la anotación ```@PutMapping```;
 - Escribir un código para actualizar la información de un registro en la base de datos;
