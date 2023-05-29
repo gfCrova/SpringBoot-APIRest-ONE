@@ -1,9 +1,14 @@
 # Spring Boot API Rest ONE
 
+<br>
 
 API Rest en Java, desarrollando operaciones CRUD utilizando la base de datos MySQL, usando Flyway como una herramienta de migración de API, trabajando con paginación para mostrar los resultados de búsqueda, fundamentos básicos de Autenticación y Autorización, validaciones usando Bean Validation e implementando configuraciones importantes para hacer una aplicación segura con Spring Security
 
+<br><br>
+
 > ## Creación del proyecto 
+
+<br>
 
 - Crear un proyecto Spring Boot usando el sitio web <b>Spring Initializr</b>;
 - Importar el proyecto a IntelliJ y ejecutar una aplicación Spring Boot a través de la clase que contiene el método ```main```;
@@ -11,6 +16,8 @@ API Rest en Java, desarrollando operaciones CRUD utilizando la base de datos MyS
 - Realizar una solicitud de prueba en el navegador accediendo a la <b>URL</b>mapeada en el Controller.
 
 > ## Request POST
+
+<br>
 
 - Mapear solicitudes <b>POST</b> en una clase Controller;
 - Enviar solicitudes <b>POST</b> a la <b>API</b> usando Insomnia;
@@ -20,6 +27,8 @@ API Rest en Java, desarrollando operaciones CRUD utilizando la base de datos MyS
 
 > ## Spring Data JPA
 
+<br>
+
 - Agregar nuevas dependencias en el proyecto;
 - Asignar una entidad <b>JPA</b> y crear una interfaz de Repositorio para ella;
 - Utilizar <b>Flyway</b> como herramienta de migración de proyectos;
@@ -27,12 +36,16 @@ API Rest en Java, desarrollando operaciones CRUD utilizando la base de datos MyS
 
 > ## Request GET
 
+<br>
+
 - Usar la anotación ```@GetMapping``` para mapear métodos en los Controllers que producen datos;
 - Usar la interfaz ```Pageable``` de Spring para realizar consultas con paginación;
 - Controlar la paginación y el ordenamiento de los datos devueltos por la <b>API</b> con los parámetros ```page```, ```size``` y ```sort```;
 - Configurar el proyecto para que los comandos <b>SQL</b> se visualicen en la consola.
 
 > ## Request PUT y DELETE
+
+<br>
 
 - Mapear solicitudes <b>PUT</b> con la anotación ```@PutMapping```;
 - Escribir un código para actualizar la información de un registro en la base de datos;
