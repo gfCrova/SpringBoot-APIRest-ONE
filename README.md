@@ -2,14 +2,14 @@
 
 API Rest en Java, desarrollando operaciones CRUD utilizando la base de datos MySQL, usando Flyway como una herramienta de migración de API, trabajando con paginación para mostrar los resultados de búsqueda, fundamentos básicos de Autenticación y Autorización, validaciones usando Bean Validation e implementando configuraciones importantes para hacer una aplicación segura con Spring Security
 
-| Creación del proyecto 
+> ## Creación del proyecto 
 
 - Crear un proyecto Spring Boot usando el sitio web Spring Initializr;
 - Importar el proyecto a IntelliJ y ejecutar una aplicación Spring Boot a través de la clase que contiene el método ```main```;
 - Crear una clase Controller y mapear una URL en él usando las anotaciones ```@RestController``` y ```@RequestMapping```;
 - Realizar una solicitud de prueba en el navegador accediendo a la URL mapeada en el Controller.
 
-| Request POST
+> ## Request POST
 
 - Mapear solicitudes POST en una clase Controller;
 - Enviar solicitudes POST a la API usando Insomnia;
