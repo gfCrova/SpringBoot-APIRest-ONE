@@ -69,3 +69,21 @@
 - Manejar errores <b>404</b> (Not Found) en la clase de manejo de errores;
 - Manejar errores <b>400</b> (Bad Request), para errores de validación de Bean Validation, en la clase de manejo de errores;
 - Simplificar el <b>JSON</b> devuelto por la <b>API</b> en casos de error de validación de Bean Validation.
+
+<br>
+
+> ## Spring Security
+
+- Identificar cómo funciona el proceso de autenticación y autorización en una <b>API Rest</b>;
+- Agregar Spring Security al proyecto;
+- Cómo funciona el comportamiento padrón de Spring Security en una aplicación;
+- Implementar el proceso de autenticación en la <b>API</b>, de forma Stateless, utilizando clases y configuraciones de Spring Security.
+
+<br>
+
+> ## JSON Web Token
+
+- Agregar la biblioteca ```Auth0 java-jwt``` como una dependencia del proyecto;
+- Utilizar esta biblioteca para generar un token en la <b>API</b>;
+- Inyectar una propiedad del archivo application.properties en una clase administrada por Spring, usando la anotación ```@Value```;
+- Devolver un token generado en la <b>API</b> cuando un usuario se autentica.
