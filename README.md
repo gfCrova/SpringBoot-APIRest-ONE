@@ -59,3 +59,13 @@
 - Modificar el código <b>HTTP</b> devuelto en las respuestas de la <b>API</b>;
 - Agregar encabezados a las respuestas de la <b>API</b>;
 - Utilice los códigos <b>HTTP</b> más apropiados para cada operación realizada en la <b>API</b>.
+
+<br>
+
+> ## Tratando Errores
+
+- Crear una clase para aislar el manejo de excepciones de <b>API</b>, utilizando la anotación ```@RestControllerAdvice```;
+- Utilizar la anotación ```@ExceptionHandler```, de Spring, para indicar qué excepción debe capturar un determinado método de la clase de manejo de errores;
+- Manejar errores <b>404</b> (Not Found) en la clase de manejo de errores;
+- Manejar errores <b>400</b> (Bad Request), para errores de validación de Bean Validation, en la clase de manejo de errores;
+- Simplificar el <b>JSON</b> devuelto por la <b>API</b> en casos de error de validación de Bean Validation.
