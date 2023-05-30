@@ -47,9 +47,11 @@
 - Mapear parámetros dinámicos en la <b>URL</b> con la anotación ```@PathVariable```;
 - Implementar el concepto de exclusión lógica utilizando un atributo booleano.
 
-<br>
+<br><br>
 
 ## Aplicando las mejores prácticas y proteger una API REST
+
+<br>
 
 > ## Buenas Prácticas
 
