@@ -46,3 +46,14 @@
 - Mapear solicitudes <b>DELETE</b> con la anotación ```@DeleteMapping```;
 - Mapear parámetros dinámicos en la <b>URL</b> con la anotación ```@PathVariable```;
 - Implementar el concepto de exclusión lógica utilizando un atributo booleano.
+
+<br>
+
+## Aplicando las mejores prácticas y proteger una API REST
+
+> ## Buenas Prácticas
+
+- Usar la clase ```ResponseEntity```, de Spring, para personalizar los retornos de los métodos de una clase Controller;
+- Modificar el código <b>HTTP</b> devuelto en las respuestas de la <b>API</b>;
+- Agregar encabezados a las respuestas de la <b>API</b>;
+- Utilice los códigos <b>HTTP</b> más apropiados para cada operación realizada en la <b>API</b>.
